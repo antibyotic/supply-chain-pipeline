@@ -1,0 +1,17 @@
+name: Baseline
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  bauen:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Code holen
+        uses: actions/checkout@v4
+
+      - name: Docker-Image bauen
+        run: docker build -t meine-app .
+
+        
